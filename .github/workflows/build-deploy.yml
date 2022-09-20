@@ -47,7 +47,7 @@ jobs:
 
             docker run --name fuks-server-nginx \
             --rm -d \
-            -v "/server/fuks-server/www":"/var/www/fuks.ru" \
+            -v "/server/fuks-server/www":"/var/www" \
             -v "/server/fuks-server/letsencrypt":"/etc/letsencrypt" \
             --network="fuks-ru" \
             -p 443:443 -p 80:80 \
