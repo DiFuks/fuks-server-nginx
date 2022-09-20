@@ -45,7 +45,7 @@ jobs:
             docker rmi fuks-server-nginx
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx
 
-            docker run --name fuks-ru-nginx \
+            docker run --name fuks-server-nginx \
             --rm -d \
             -v "/server/fuks-server/fuks.ru/letsencrypt":"/etc/fuks.ru/letsencrypt" \
             -v "/server/fuks-server/blog-backend.fuks.ru/letsencrypt":"/etc/blog-backend.fuks.ru/letsencrypt" \
