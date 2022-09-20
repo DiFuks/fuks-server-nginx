@@ -47,12 +47,21 @@ jobs:
 
             docker run --name fuks-server-nginx \
             --rm -d \
+            -v "/server/fuks-server/fuks.ru/www":"/var/www/fuks.ru" \
+            -v "/server/fuks-server/blog-backend.fuks.ru/www":"/var/www/blog-backend.fuks.ru" \
+            -v "/server/fuks-server/auth.fuks.ru/www":"/var/www/auth.fuks.ru" \
+            -v "/server/fuks-server/admin.fuks.ru/www":"/var/www/admin.fuks.ru" \
+            -v "/server/fuks-server/story.fuks.ru/www":"/var/www/story.fuks.ru" \
+            -v "/server/fuks-server/docs.fuks.ru/www":"/var/www/docs.fuks.ru" \
+            -v "/server/fuks-server/esenin-family.ru/www":"/var/www/esenin-family.ru" \
+
             -v "/server/fuks-server/fuks.ru/letsencrypt":"/etc/fuks.ru/letsencrypt" \
             -v "/server/fuks-server/blog-backend.fuks.ru/letsencrypt":"/etc/blog-backend.fuks.ru/letsencrypt" \
             -v "/server/fuks-server/auth.fuks.ru/letsencrypt":"/etc/auth.fuks.ru/letsencrypt" \
             -v "/server/fuks-server/admin.fuks.ru/letsencrypt":"/etc/admin.fuks.ru/letsencrypt" \
             -v "/server/fuks-server/story.fuks.ru/letsencrypt":"/etc/story.fuks.ru/letsencrypt" \
             -v "/server/fuks-server/docs.fuks.ru/letsencrypt":"/etc/docs.fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/esenin-family.ru/letsencrypt":"/etc/esenin-family.ru/letsencrypt" \
             --network="fuks-ru" \
             -p 443:443 -p 80:80 \
             difuks/fuks-server-nginx
