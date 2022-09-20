@@ -14,6 +14,7 @@ on:
           - auth.fuks.ru
           - story.fuks.ru
           - docs.fuks.ru
+          - esenin-family.ru
 
 jobs:
   update:
