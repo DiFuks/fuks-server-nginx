@@ -44,4 +44,15 @@ jobs:
             docker rm fuks-server-nginx
             docker rmi fuks-server-nginx
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx
-            docker run --name fuks-ru-nginx --rm --network="fuks-ru" -p 443:443 -p 80:80 -d difuks/fuks-server-nginx
+
+            docker run --name fuks-ru-nginx \
+            --rm -d \
+            -v "/server/fuks-server/fuks.ru/letsencrypt":"/etc/fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/blog-backend.fuks.ru/letsencrypt":"/etc/blog-backend.fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/auth.fuks.ru/letsencrypt":"/etc/auth.fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/admin.fuks.ru/letsencrypt":"/etc/admin.fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/story.fuks.ru/letsencrypt":"/etc/story.fuks.ru/letsencrypt" \
+            -v "/server/fuks-server/docs.fuks.ru/letsencrypt":"/etc/docs.fuks.ru/letsencrypt" \
+            --network="fuks-ru" \
+            -p 443:443 -p 80:80 \
+            difuks/fuks-server-nginx
