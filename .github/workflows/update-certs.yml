@@ -1,20 +1,9 @@
-name: Create ssl certs for domain
+name: Update ssl certs for all domains
 
 on:
   workflow_dispatch:
-    inputs:
-      domain:
-        type: choice
-        description: Domain
-        required: true
-        options:
-          - fuks.ru
-          - blog-backend.fuks.ru
-          - admin.fuks.ru
-          - auth.fuks.ru
-          - story.fuks.ru
-          - docs.fuks.ru
-          - esenin-family.ru
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   update:
@@ -35,8 +24,7 @@ jobs:
             -v "/server/fuks-server/letsencrypt/:/etc/letsencrypt" \
             -v "/server/fuks-server/var/logs/letsencrypt/:/var/log/letsencrypt/" \
             -v "/server/fuks-server/www/:/var/www/" \
-            certbot/certbot certonly \
-            -n -m difuks@gmail.com \
-            --agree-tos --force-renewal \
-            --webroot \
-            -w /var/www/${{ github.event.inputs.domain }} -d ${{ github.event.inputs.domain }}
+            certbot/certbot renew \
+            -n \
+            --agree-tos \
+            --webroot
