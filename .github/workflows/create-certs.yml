@@ -35,4 +35,5 @@ jobs:
             -v "/server/fuks-server/${{ github.event.inputs.domain }}/letsencrypt/:/etc/letsencrypt" \
             -v "/server/fuks-server/${{ github.event.inputs.domain }}/var/logs/letsencrypt/:/var/log/letsencrypt/" \
             -v "/server/fuks-server/${{ github.event.inputs.domain }}/www/letsencrypt/:/var/www/.well-known" \
-            certbot/certbot certonly -n -m difuks@gmail.com --webroot -w /var/www --agree-tos -d ${{ github.event.inputs.domain }}
+            certbot/certbot certonly \
+            -n -m difuks@gmail.com --webroot -w /var/www --agree-tos -d ${{ github.event.inputs.domain }}
