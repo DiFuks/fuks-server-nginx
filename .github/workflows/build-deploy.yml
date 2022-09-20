@@ -44,6 +44,14 @@ jobs:
             docker rm fuks-server-nginx
             docker rmi fuks-server-nginx
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx
+            
+            mkdir -p /server/fuks-server/www/fuks.ru
+            mkdir -p /server/fuks-server/www/blog-backend.fuks.ru
+            mkdir -p /server/fuks-server/www/auth.fuks.ru
+            mkdir -p /server/fuks-server/www/admin.fuks.ru
+            mkdir -p /server/fuks-server/www/story.fuks.ru
+            mkdir -p /server/fuks-server/www/docs.fuks.ru
+            mkdir -p /server/fuks-server/www/esenin-family.ru
 
             docker run --name fuks-server-nginx \
             --rm -d \
