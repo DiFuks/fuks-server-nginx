@@ -54,7 +54,6 @@ jobs:
             -v "/server/fuks-server/story.fuks.ru/www":"/var/www/story.fuks.ru" \
             -v "/server/fuks-server/docs.fuks.ru/www":"/var/www/docs.fuks.ru" \
             -v "/server/fuks-server/esenin-family.ru/www":"/var/www/esenin-family.ru" \
-
             -v "/server/fuks-server/fuks.ru/letsencrypt":"/etc/fuks.ru/letsencrypt" \
             -v "/server/fuks-server/blog-backend.fuks.ru/letsencrypt":"/etc/blog-backend.fuks.ru/letsencrypt" \
             -v "/server/fuks-server/auth.fuks.ru/letsencrypt":"/etc/auth.fuks.ru/letsencrypt" \
