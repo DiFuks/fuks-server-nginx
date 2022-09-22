@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create certs
+      - name: Update certs
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -38,8 +38,6 @@ jobs:
     steps:
       - name: Send telegram message
         uses: appleboy/telegram-action@master
-        env:
-          COMMIT_URL: ${{ github.server_url }}/${{ github.repository }}/commit/${{github.sha}}
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
