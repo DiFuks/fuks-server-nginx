@@ -52,6 +52,7 @@ jobs:
             mkdir -p /server/fuks-server/www/story.fuks.ru
             mkdir -p /server/fuks-server/www/docs.fuks.ru
             mkdir -p /server/fuks-server/www/esenin-family.ru
+            mkdir -p /server/fuks-server/www/mail.fuks.ru
 
             docker run --name fuks-server-nginx \
             --rm -d \

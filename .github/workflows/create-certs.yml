@@ -15,6 +15,7 @@ on:
           - story.fuks.ru
           - docs.fuks.ru
           - esenin-family.ru
+          - mail.fuks.ru
 
 jobs:
   create:
