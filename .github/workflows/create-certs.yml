@@ -51,9 +51,11 @@ jobs:
     steps:
       - name: Send telegram message
         uses: appleboy/telegram-action@master
+        env:
+          ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Create certs for ${{ github.event.inputs.domain }} *${{ needs.create.result == 'success' && '✅' || '⛔️' }}*
+            [Create certs](${{ env.ACTION_URL }}) for ${{ github.event.inputs.domain }} *${{ needs.create.result == 'success' && '✅' || '⛔️' }}*
