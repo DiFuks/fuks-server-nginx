@@ -57,5 +57,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
+          disable_web_page_preview: true
           message: |
-            [Create certs](${{ env.ACTION_URL }}) for ${{ github.event.inputs.domain }} *${{ needs.create.result == 'success' && '✅' || '⛔️' }}*
+            *nginx-server*
+            
+            [create certs](${{ env.ACTION_URL }}) by *${{ github.actor }}*
+            
+            steps: create *${{ needs.create.result == 'success' && '✅' || '⛔️' }}

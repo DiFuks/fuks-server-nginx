@@ -44,5 +44,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
+          disable_web_page_preview: true
           message: |
-            [Update certs](${{ env.ACTION_URL }}) *${{ needs.update.result == 'success' && '✅' || '⛔️' }}*
+            *nginx-server*
+            
+            [update certs](${{ env.ACTION_URL }}) by *${{ github.actor }}*
+            
+            steps: update *${{ needs.update.result == 'success' && '✅' || '⛔️' }}
