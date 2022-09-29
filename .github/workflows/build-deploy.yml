@@ -55,7 +55,7 @@ jobs:
             mkdir -p /server/fuks-server/www/mail.fuks.ru
 
             docker run --name fuks-server-nginx \
-            --rm \
+            --rm -d \
             -v "/server/fuks-server/www":"/var/www" \
             -v "/server/fuks-server/letsencrypt":"/etc/letsencrypt" \
             --network="fuks-ru" \
