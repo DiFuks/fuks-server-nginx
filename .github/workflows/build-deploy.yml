@@ -40,9 +40,9 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            docker container stop fuks-server-nginx
-            docker rm fuks-server-nginx
-            docker rmi fuks-server-nginx
+            docker stop fuks-server-nginx || true
+            docker rm fuks-server-nginx || true
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx || true
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx
             
             mkdir -p /server/fuks-server/www/fuks.ru
@@ -60,7 +60,7 @@ jobs:
             -v "/server/fuks-server/letsencrypt":"/etc/letsencrypt" \
             --network="fuks-ru" \
             -p 443:443 -p 80:80 \
-            difuks/fuks-server-nginx
+            ${{ secrets.DOCKERHUB_USERNAME }}/fuks-server-nginx
 
   notification:
     name: Notification
