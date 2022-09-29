@@ -18,9 +18,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker run --rm \
-            -v "/server/fuks-server/letsencrypt/:/etc/letsencrypt" \
-            -v "/server/fuks-server/var/logs/letsencrypt/:/var/log/letsencrypt/" \
-            -v "/server/fuks-server/www/:/var/www/" \
+            -v "/server/nginx-server/letsencrypt/:/etc/letsencrypt" \
+            -v "/server/nginx-server/var/logs/letsencrypt/:/var/log/letsencrypt/" \
+            -v "/server/nginx-server/www/:/var/www/" \
             certbot/certbot renew \
             -n \
             --agree-tos \
