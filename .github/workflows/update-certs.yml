@@ -50,4 +50,4 @@ jobs:
             
             [update certs](${{ env.ACTION_URL }}) by *${{ github.actor }}*
             
-            steps: update *${{ needs.update.result == 'success' && '✅' || '⛔️' }}
+            steps: update ${{ needs.update.result == 'success' && '✅' || '⛔️' }}
