@@ -17,6 +17,7 @@ on:
           - esenin-family.ru
           - mail.fuks.ru
           - auth.esenin-family.ru
+          - admin.esenin-family.ru
 
 jobs:
   create:
