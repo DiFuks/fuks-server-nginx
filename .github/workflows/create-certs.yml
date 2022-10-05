@@ -65,4 +65,4 @@ jobs:
             
             [create certs](${{ env.ACTION_URL }}) by *${{ github.actor }}*
             
-            steps: create *${{ needs.create.result == 'success' && '✅' || '⛔️' }}
+            steps: create ${{ needs.create.result == 'success' && '✅' || '⛔️' }}
