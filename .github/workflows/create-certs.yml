@@ -16,8 +16,10 @@ on:
           - docs.fuks.ru
           - esenin-family.ru
           - mail.fuks.ru
+          - minio.fuks.ru
           - auth.esenin-family.ru
           - admin.esenin-family.ru
+          - minio.esenin-family.ru
 
 jobs:
   create:

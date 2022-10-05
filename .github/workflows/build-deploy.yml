@@ -53,8 +53,10 @@ jobs:
             mkdir -p /server/nginx-server/www/docs.fuks.ru
             mkdir -p /server/nginx-server/www/esenin-family.ru
             mkdir -p /server/nginx-server/www/mail.fuks.ru
+            mkdir -p /server/nginx-server/www/minio.fuks.ru
             mkdir -p /server/nginx-server/www/auth.esenin-family.ru
             mkdir -p /server/nginx-server/www/admin.esenin-family.ru
+            mkdir -p /server/nginx-server/www/minio.esenin-family.ru
 
             docker run --name nginx-server \
             --rm -d \
