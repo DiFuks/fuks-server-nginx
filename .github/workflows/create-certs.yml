@@ -20,6 +20,7 @@ on:
           - auth.esenin-family.ru
           - admin.esenin-family.ru
           - minio.esenin-family.ru
+          - app.esenin-family.ru
 
 jobs:
   create:
